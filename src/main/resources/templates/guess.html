@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Dice Roll</title>
+    <th:block th:include="partials/styles.html :: styles"></th:block>
+</head>
+<body>
+<nav th:replace="partials/navbar.html :: navbar"></nav>
+
+    <h1>Guess the Dice Roll</h1>
+    <h2>Click on your number bellow</h2>
+    <div>
+        <a href="/roll-dice/1">1</a>
+        <a href="/roll-dice/2">2</a>
+        <a href="/roll-dice/3">3</a>
+        <a href="/roll-dice/4">4</a>
+        <a href="/roll-dice/5">5</a>
+        <a href="/roll-dice/6">6</a>
+    </div>
+
+<!--    <form action="/roll-dice">-->
+<!--    <a href="http://localhost:8080/roll-dice/1">1</a>-->
+<!--    <a href="http://localhost:8080/roll-dice/2">2</a>-->
+<!--    <a href="http://localhost:8080/roll-dice/3">3</a>-->
+<!--    <a href="http://localhost:8080/roll-dice/4">4</a>-->
+<!--    <a href="http://localhost:8080/roll-dice/5">5</a>-->
+<!--    <a href="http://localhost:8080/roll-dice/6">6</a>-->
+<!--    </form>-->
+
+<footer th:replace="partials/footer.html :: footer"></footer>
+</body>
+</html>
