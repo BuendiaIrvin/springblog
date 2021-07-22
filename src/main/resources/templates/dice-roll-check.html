@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Checking your guess</title>
+    <th:block th:include="partials/styles.html :: styles"></th:block>
+</head>
+<body>
+<nav th:replace="partials/navbar.html :: navbar"></nav>
+
+<h1>Heres the deal...</h1>
+<p>You guessed: <span th:text="${n}"></span></p>
+<p>The die rolled: <span th:text="${magicNumber}"></span></p>
+<p th:if="${check}">You guessed correctly!</p>
+<p th:if="${!check}">you chose poorly...</p>
+
+<footer th:replace="partials/footer.html :: footer"></footer>
+</body>
+</html>
