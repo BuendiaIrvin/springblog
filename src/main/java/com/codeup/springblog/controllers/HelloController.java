@@ -36,7 +36,7 @@ public class HelloController {
     @PostMapping("/join")
     public String joinCohort(@RequestParam(name= "cohort") String cohort, Model model){
         model.addAttribute("cohort", "Welcome to " + cohort + "!");
-        emailSvc.prepareAndSend("test@test.com","hello! welcome to " + cohort +  "!", "thank you for attending our web dev program.");
+//        emailSvc.prepareAndSend("test@test.com","hello! welcome to " + cohort +  "!", "thank you for attending our web dev program.");
         return "join";
     }
 
