@@ -1,10 +1,20 @@
 package com.codeup.springblog.controllers;
 
+import com.codeup.springblog.services.EmailService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+
 
 @Controller
 public class HelloController {
+
+    private final EmailService emailSvc;
+
+    public HelloController(EmailService emailSvc){
+        this.emailSvc = emailSvc;
+    }
 
     @GetMapping("/hello")
     @ResponseBody
@@ -13,10 +23,28 @@ public class HelloController {
     }
 
     @GetMapping("/hello/{name}")
-    @ResponseBody
-    public String sayHello(@PathVariable String name){
-        return "hello " + name + "!";
+    public String sayHello(@PathVariable String name, Model model){
+        model.addAttribute("name", name);
+        return "hello";
     }
+
+    @GetMapping("/join")
+    public String showJoinForm() {
+        return "join";
+    }
+
+    @PostMapping("/join")
+    public String joinCohort(@RequestParam(name= "cohort") String cohort, Model model){
+        model.addAttribute("cohort", "Welcome to " + cohort + "!");
+//        emailSvc.prepareAndSend("test@test.com","hello! welcome to " + cohort +  "!", "thank you for attending our web dev program.");
+        return "join";
+    }
+
+
+
+
+//    @PostMapping("/join")
+//    public
 
     @GetMapping("/number/{num}")
     @ResponseBody
