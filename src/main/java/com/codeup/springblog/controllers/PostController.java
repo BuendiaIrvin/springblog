@@ -73,5 +73,6 @@ public class PostController {
         emailService.prepareAndSend(post, "You created: " + post.getTitle(), post.getBody());
 
         return "redirect:/posts";
+
     }
 }
